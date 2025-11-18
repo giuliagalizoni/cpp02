@@ -1,7 +1,8 @@
 #include "../include/Fixed.hpp"
 #include <iostream>
 
-int main(void) {
+int main(void)
+{
 	std::cout << "=== CONSTRUCTORS TEST ===" << std::endl;
 	Fixed a;
 	Fixed const b(10);
