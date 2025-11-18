@@ -1,15 +1,17 @@
 #include "../include/Point.hpp"
 #include <iostream>
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
-static void printTest(const char* description, bool result) {
+static void printTest(const char *description, bool result)
+{
 	std::cout << description << ": "
-			<< (result ? "INSIDE ✓" : "OUTSIDE ✗")
-			<< std::endl;
+			  << (result ? "INSIDE ✓" : "OUTSIDE ✗")
+			  << std::endl;
 }
 
-int main(void) {
+int main(void)
+{
 	std::cout << "=== BSP (Binary Space Partitioning) Tests ===" << std::endl;
 	std::cout << std::endl;
 
@@ -56,29 +58,29 @@ int main(void) {
 	std::cout << std::endl;
 
 	std::cout << "--- Test 3: Points on edges (should be OUTSIDE) ---" << std::endl;
-	Point p8(5.0f, 0.0f);  // Middle of edge AB
+	Point p8(5.0f, 0.0f); // Middle of edge AB
 	std::cout << "Point (" << p8.getX() << ", " << p8.getY() << "): ";
 	printTest("On edge AB", bsp(a, b, c, p8));
 
-	Point p9(2.5f, 5.0f);  // On edge AC
+	Point p9(2.5f, 5.0f); // On edge AC
 	std::cout << "Point (" << p9.getX() << ", " << p9.getY() << "): ";
 	printTest("On edge AC", bsp(a, b, c, p9));
 
-	Point p10(7.5f, 5.0f);  // On edge BC
+	Point p10(7.5f, 5.0f); // On edge BC
 	std::cout << "Point (" << p10.getX() << ", " << p10.getY() << "): ";
 	printTest("On edge BC", bsp(a, b, c, p10));
 	std::cout << std::endl;
 
 	std::cout << "--- Test 4: Points on vertices (should be OUTSIDE) ---" << std::endl;
-	Point p11(0.0f, 0.0f);  // Vertex A
+	Point p11(0.0f, 0.0f); // Vertex A
 	std::cout << "Point (" << p11.getX() << ", " << p11.getY() << "): ";
 	printTest("On vertex A", bsp(a, b, c, p11));
 
-	Point p12(10.0f, 0.0f);  // Vertex B
+	Point p12(10.0f, 0.0f); // Vertex B
 	std::cout << "Point (" << p12.getX() << ", " << p12.getY() << "): ";
 	printTest("On vertex B", bsp(a, b, c, p12));
 
-	Point p13(5.0f, 10.0f);  // Vertex C
+	Point p13(5.0f, 10.0f); // Vertex C
 	std::cout << "Point (" << p13.getX() << ", " << p13.getY() << "): ";
 	printTest("On vertex C", bsp(a, b, c, p13));
 	std::cout << std::endl;
