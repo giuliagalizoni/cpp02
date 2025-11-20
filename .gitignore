@@ -1,3 +1,4 @@
 *.o
 fixed
 point
+.DS_Store
