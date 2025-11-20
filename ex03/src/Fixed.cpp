@@ -54,12 +54,12 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-	return (float)_fixedPoint / (1 << 8);
+	return (float)_fixedPoint / (1 << _bits);
 }
 
 int Fixed::toInt(void) const
 {
-	return _fixedPoint >> 8;
+	return _fixedPoint >> _bits;
 }
 
 bool Fixed::operator>(const Fixed &fixed) const
